@@ -1,4 +1,28 @@
 {
   "name": "md-links",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "description": "este paquete se encarga de buscar links válidos dentro de un documento tipo md",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eliza8855/LIM015-md-links.git"
+  },
+  "keywords": [],
+  "author": "Elizabeth Lopez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eliza8855/LIM015-md-links/issues"
+  },
+  "homepage": "https://github.com/eliza8855/LIM015-md-links#readme",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  },
+  "dependencies": {}
 }
