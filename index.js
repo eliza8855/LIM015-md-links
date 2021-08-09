@@ -1,41 +1,21 @@
 const path = require("path");
 const fs = require("fs");
 
-const convertToPathAbsolute = (inputPath) => {
-  if (path.isAbsolute(inputPath)) {
-     return inputPath;
-  } else {
-     return path.resolve(inputPath);
-  }
-};
+const absolutePathFile = "C:/Users/elope/OneDrive/Documents/GitHub/LIM015-md-links/docsprueba/cursos-favoritos.md";
+const relativePathFile = "./docsprueba/cursos-favoritos.md";
+const absolutePathDirectory = "C:\Users\elope\OneDrive\Documents/GitHub/LIM015-md-links/docsprueba";
 
-statsObj = fs.statSync("./docsprueba/cursos-favoritos.md");
+// Funcion que convierte la ruta a absoluta
+const convertPathToAbsolute = inputPath => path.resolve(inputPath);
 
-const isFilePath = (route) => {
-   const stats =
-};
+// Funcion que detecta si el file existe, devuelve un booleano 
+const detectPathExists = inputPath => fs.existsSync(inputPath);
 
-const checkTypeObject = (inputPath) => {
-   let arrayPathFiles = [ ];
-  if (fs.statSync(inputPath).isDirectory()) {
-    const readDirectory = fs.readdir(inputPath, (err,files) => {
-       if (err) {
-          return console.error(err);
-       } else {
-          
-       }
+//Funcion que detecta si el directorio existe, devuelve un booleano
 
-    })
-    readDirectory.forEach(file => {
-       const pathFile = path.join(inputPath,file);
-       arrayPathFiles = arrayPathFiles.concat(checkTYpeObject(pathFile))
-    })
-     return arrayPathFiles 
-  } else {
-     return console.log("it is a file",convertToPathAbsolute(inputPath))  
-  }
-};
+const a = path.normalize(absolutePathDirectory);
+console.log(a);
 
-console.log(statsObj);
-//console.log(checkTypeObject("./docsprueba/cursos-favoritos.md"));
-//console.log(convertToPathAbsolute("docsprueba"));
+//console.log(detectPathExists(absolutePathFile));
+//console.log(checkTypeObject("./docsprueba"));
+//console.log(path);
