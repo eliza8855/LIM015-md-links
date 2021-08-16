@@ -33,19 +33,20 @@ const openDirectory = (inputPath) => {
         return filesArray;
     };
 
-console.log(openDirectory(absolutePathDirectory));
+//console.log(openDirectory(absolutePathDirectory));
 
 //Funcion que filtra un array y devuelve un array con solo archivos .md 
 
 const filesArray2 = [
-    //'C:\\Users\\elope\\OneDrive\\Documents\\GitHub\\LIM015-md-links\\docsprueba\\cursos-favoritos.md',
-    //'C:\\Users\\elope\\OneDrive\\Documents\\GitHub\\LIM015-md-links\\docsprueba\\cursos-favoritos3.md',
-    'C:\\Users\\elope\\OneDrive\\Documents\\GitHub\\LIM015-md-links\\docsprueba\\docsprueba2',
-    'C:\\Users\\elope\\OneDrive\\Documents\\GitHub\\LIM015-md-links\\docsprueba\\docsprueba2.js'
-  ]
+    'C:\\Users\\elope\\OneDrive\\Documents\\GitHub\\LIM015-md-links\\docsprueba\\cursos-favoritos.md',
+    'C:\\Users\\elope\\OneDrive\\Documents\\GitHub\\LIM015-md-links\\docsprueba\\cursos-favoritos3.md',
+    'C:\\Users\\elope\\OneDrive\\Documents\\GitHub\\LIM015-md-links\\docsprueba\\docsprueba2\\cursos-favoritos2.md'
+    //'C:\\Users\\elope\\OneDrive\\Documents\\GitHub\\LIM015-md-links\\docsprueba\\docsprueba2',
+    //'C:\\Users\\elope\\OneDrive\\Documents\\GitHub\\LIM015-md-links\\docsprueba\\docsprueba2.js'
+  ];
 
-const FilterMdFile = (inputPath) => {
-    const listFilesMd = inputPath.filter(file => path.extname(file) == ".md");
+const FilterMdFile = (inputArray) => {
+    const listFilesMd = inputArray.filter(file => path.extname(file) == ".md");
     if (listFilesMd.length === 0) {
        return "There isn't any Markdown Files";
     } else {
@@ -53,10 +54,31 @@ const FilterMdFile = (inputPath) => {
     }
 };
 
-// funcion que extrae las URL del los archivos
+// funcion que extrae las URL de los archivos
+const getURLs = (arrayRoutesMD) => {
+    const regExp = /\[(.*)\]\(((?:\/|https?:\/\/).*)\)/gi;
+    const regExpText = /\[(.*)\]/g;
+    const regExpURL = /\(((?:\/|https?:\/\/).*)\)/g;
+    let arrayHiperDetailsMaster = [];
+    arrayRoutesMD.forEach((route) =>{
+        const stringInsideRoute = fs.readFileSync(route,'utf8');
+        const arrayofHipers = stringInsideRoute.match(regExp);
+        arrayHipersDetails = [];
+        arrayofHipers.forEach( (e) => {
+          const fileObject = {
+           href: path.normalize(route),
+           text: e.match(regExpText).join().slice(1, -1),
+           file: e.match(regExpURL).join().slice(1,-1),
+          }
+          arrayHipersDetails.push(fileObject);
+        })
+        arrayHiperDetailsMaster = arrayHiperDetailsMaster.concat(arrayHipersDetails);
+    })   
+    return arrayHiperDetailsMaster;
+};
 
-const 
-    
-//console.log(FilterMdFile(filesArray))
+console.log(getURLs(filesArray2))
 
-// 
+
+
+

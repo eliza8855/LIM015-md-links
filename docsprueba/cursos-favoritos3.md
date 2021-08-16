@@ -1,0 +1,6 @@
+- Julio: [Curso de Photoshop 2021](https://www.crehana.com/clases/v2/10854/detalle/)
+- Agosto: [Introducción a la redacción digital](https://www.crehana.com/clases/v2/9325/player/21406/)
+- Setiembre: [Nutrición saludable: Alimenta una vida mejor](https://www.crehana.com/hola/) 
+- Octubre: [Participación ciudadana en el Parlamento Peruano](https://www.congreso.gob.pe/control-politico/index.php)
+- Noviembre:  [Javascript Algorithms and Data Structures](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
+- Diciembre: [Curso de Node Js](https://github.com/mdn/learning-area/blob/master/javascript/apis/introduction/maps-example.html)
