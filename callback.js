@@ -20,84 +20,18 @@ const listURLsDetails = [
     }
   ]
 
-// Prueba de HTTP Request (Mari)
-
-/*const getStatusLink = (Links)  =>
-   Links.map( (link) => {
-   return fetch(link.href)
-   .then((res) => {
-       return {
-           file: link.file,
-           href: link.href,
-           text: link.text,
-           status: res.status,
-           message: res.statusText
-       }
-   }).catch((err) => {
-       return {
-        file: link.file,
-        href: link.href,
-        text: link.text,
-        status: res.status,
-        message: "ERROR"
-       }
-   })
-    });*/
-
-    const getStatusLink = (data) => data.map((obj) => {
-            return fetch(obj.href)
-                .then((res) => {
-                    return {
-                        file: obj.file,
-                        href: obj.href,
-                        text: obj.text,
-                        status: res.status,
-                        message: res.statusText
-                    }
-                })
-                .catch((error) => {
-                    return {
-                        file: obj.file,
-                        href: obj.href,
-                        text: obj.text,
-                        status: 500,
-                        message: 'FAIL',
-                    }
-                });
-    });
+let p = new Promise((resolve,reject)=> {
+  let a = 1 + 1 
+  if (a == 2) {
+    resolve ("Succes")
+  }else{
+    reject("Failed")
+  }
+})
 
 
-const prueba = (listURLsDetails) => {
-    const respuesta = Promise.all(getStatusLink(listURLsDetails))
-    .then(res => {
-        return res
-    })
-    return respuesta;
-}
-
-console.log(prueba());
-
-
-
-//console.log(getStatusLink(listURLsDetails))
- 
- const statusLink = (arrLinks) => fetch(arrLinks.href) 
-     .then((res) => {
-       const mystatus = res.status;
-       const mymessage = res.status !== 200 ? 'FAIL' : res.statusText;
-         return {
-           ...arrLinks,
-           status: mystatus,
-           message: mymessage,
-         };
-       })
-     .catch(() => {
-       return {
-         ...arrLinks,
-         status: 'no status',
-         message: 'FAIL',
-       }
-     });
- 
- //console.log(statusLink(listURLsDetails));
- 
+p.then((message) => {
+  console.log ("this is in the then: " + message)
+}).catch ((message) => {
+  console.log ("this is in the catch: " + message)
+})
