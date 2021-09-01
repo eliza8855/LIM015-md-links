@@ -1,7 +1,7 @@
 {
-  "name": "md-links",
+  "name": "md-links-elizalopez",
   "version": "0.1.0",
-  "description": "este paquete se encarga de buscar links válidos dentro de un documento tipo md",
+  "description": "este modulo se encarga de buscar links válidos dentro de un documento tipo md",
   "main": "index.js",
   "directories": {
     "test": "test"

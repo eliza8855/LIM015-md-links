@@ -18,5 +18,4 @@ Devuelve el total de links (total), links únicos (unique) y links rotos (broken
 
 module.exports = {
     help
-  }
-  
+}
