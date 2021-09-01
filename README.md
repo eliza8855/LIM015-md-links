@@ -25,30 +25,36 @@ consideración en peculiaridades del lenguaje, convenciones y buenas prácticas.
 Para la implementación de la librería se reaizaron los siguientes diagramas de flujo: 
 
 **Diagrama de Flujo API**
-![diagrama de flujo API](images/Diagrama API.jpeg)
+![diagrama de flujo API](images/Diagrama_API.jpeg)
 
 **Diagrama de Flujo CLI**
-
+![diagrama de flujo CLI](images/Diagrama_CLI.jpeg)
 
 ## 3. Guia de Uso
 
-**Caso 1: md-links <path-to-file>**
+**Caso 1: md-links path-to-file**
 
+![Listado de links por defecto](images/Listado%20de%20links%20(porDefecto).jpg)
 
-**Caso 2: md-links <path-to-file> --validate**
+**Caso 2: md-links path-to-file --validate**
 
+![Listado de links (validate)](images/Listado%20de%20links%20(validate).jpg)
 
-**Caso 3: md-links <path-to-file> --stats**
+**Caso 3: md-links path-to-file --stats**
 
+![Listado de links (stats)](images/Listado%20de%20links%20(stats).jpg)
 
-**Caso 4: md-links <path-to-file> --stats --validate**
+**Caso 4: md-links path-to-file --stats --validate**
 
+![Listado de links (stats, validate)](images/Listado%20de%20links%20(stats,%20validate).jpg)
 
 **Caso 5: md-links <path-to-file> --validate --stats**
 
+![Listado de links (validate, stats)](images/Listado%20de%20links%20(validate,%20stats).jpg)
 
-**Caso 6: Cuando colocas otra información**
+**Caso 6: Cuando se omite información o es errada**
 
+![help](images/help.jpg)
 
 ### Objetivos de Aprendizaje
 
