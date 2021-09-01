@@ -1,4 +1,4 @@
-const {resolvePathToAbsolute, detectPathExists, detectDirectory, openDirectory, filterMdFile, getURLs, getStatusLinks} = require ('../index.js');
+const {resolvePathToAbsolute, detectPathExists, detectDirectory, openDirectory, filterMdFile, getURLs, getStatusLinks} = require ('../md-Links.js');
 
 const arrayWithFiles = [
   'C:\\Users\\elope\\OneDrive\\Documents\\GitHub\\LIM015-md-links\\docsprueba\\carpeta_sinMD\\documento1.js',

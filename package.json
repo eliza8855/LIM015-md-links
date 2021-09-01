@@ -17,6 +17,9 @@
   "keywords": [],
   "author": "Elizabeth Lopez",
   "license": "ISC",
+  "bin": {
+    "md-links": "cli.js"
+  },
   "bugs": {
     "url": "https://github.com/eliza8855/LIM015-md-links/issues"
   },
@@ -25,6 +28,7 @@
     "jest": "^27.0.6"
   },
   "dependencies": {
+    "chalk": "^4.1.2",
     "node-fetch": "^2.6.1"
   }
 }
